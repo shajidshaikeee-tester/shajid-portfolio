@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,372 +21,220 @@ box-sizing:border-box;
 font-family:'Inter',sans-serif;
 }
 
-body{
-
-background:#000;
-
-color:#fff;
-
-overflow-x:hidden;
-
+html{
 scroll-behavior:smooth;
-
 }
 
-section{
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-padding:80px;
-
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
 }
-
-/* Navbar */
 
 header{
-
 position:fixed;
-
 top:20px;
-
 left:50%;
-
 transform:translateX(-50%);
-
-z-index:100;
-
+z-index:1000;
 padding:15px 30px;
-
-background:rgba(255,255,255,0.05);
-
+background:rgba(255,255,255,.08);
 backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,0.08);
-
 border-radius:50px;
-
+border:1px solid rgba(255,255,255,.1);
 }
 
 nav{
-
 display:flex;
-
-gap:30px;
-
+gap:25px;
+align-items:center;
 }
 
 nav a{
-
 color:white;
-
 text-decoration:none;
-
 font-size:14px;
-
 }
 
-/* Hero */
+.resume-btn{
+background:#2997ff;
+padding:10px 18px;
+border-radius:25px;
+}
+
+section{
+min-height:100vh;
+padding:80px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
 
 .hero{
-
 display:grid;
-
 grid-template-columns:1fr 1fr;
-
-gap:100px;
-
+gap:80px;
 }
 
 .hero-left{
-
 display:flex;
-
 flex-direction:column;
-
 justify-content:center;
-
 }
 
 .small{
-
 font-size:14px;
-
-color:#2997ff;
-
-margin-bottom:20px;
-
 letter-spacing:4px;
-
+color:#2997ff;
+margin-bottom:20px;
 }
 
 h1{
-
 font-size:clamp(4rem,8vw,7rem);
-
-line-height:0.95;
-
+line-height:.95;
 font-weight:800;
-
 letter-spacing:-5px;
-
 margin-bottom:30px;
-
 }
 
 .description{
-
-font-size:20px;
-
+font-size:22px;
 color:#999;
-
-line-height:1.7;
-
+line-height:1.8;
 margin-bottom:40px;
-
 }
 
 .btn{
-
 padding:18px 35px;
-
-width:fit-content;
-
 background:#2997ff;
-
 border-radius:50px;
-
 text-decoration:none;
-
 color:white;
-
+width:fit-content;
 font-weight:600;
-
 }
 
-/* Photo */
-
 .hero-right{
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 }
 
 .profile{
-
-width:420px;
-
-height:520px;
-
+width:400px;
+height:500px;
 position:relative;
-
 }
 
 .profile::before{
-
-content:"";
-
+content:'';
 position:absolute;
-
 inset:-60px;
-
 background:radial-gradient(circle,
-
-rgba(41,151,255,.4),
-
-transparent 70%
-
-);
-
+rgba(41,151,255,.35),
+transparent 70%);
 filter:blur(60px);
-
 z-index:-1;
-
 }
 
 .profile img{
-
 width:100%;
-
 height:100%;
-
 object-fit:cover;
-
-border-radius:40px;
-
+border-radius:35px;
 animation:float 6s ease infinite;
-
 }
 
-/* Story sections */
-
 .story{
-
 text-align:center;
-
 flex-direction:column;
-
 }
 
 .story h2{
-
 font-size:clamp(3rem,7vw,6rem);
-
-line-height:1.1;
-
-font-weight:800;
-
 margin-bottom:30px;
-
 }
 
 .story p{
-
-font-size:24px;
-
+font-size:22px;
+max-width:900px;
 color:#999;
-
-max-width:800px;
-
+line-height:1.8;
 }
 
-/* Skills */
-
 .skills{
-
 display:flex;
-
 flex-wrap:wrap;
-
 justify-content:center;
-
 gap:20px;
-
 margin-top:40px;
-
 }
 
 .skill{
-
-padding:18px 30px;
-
-border-radius:50px;
-
+padding:18px 28px;
 background:#111;
-
 border:1px solid #222;
-
+border-radius:50px;
 }
 
-/* Contact */
-
 .contact{
-
 text-align:center;
-
 }
 
 .contact h2{
-
-font-size:5rem;
-
+font-size:4rem;
 margin-bottom:30px;
-
 }
-
-.contact a{
-
-display:inline-block;
-
-margin:10px;
-
-}
-
-/* Animation */
 
 .reveal{
-
 opacity:0;
-
 transform:translateY(60px);
-
-transition:1.2s ease;
-
+transition:1s ease;
 }
 
 .reveal.active{
-
 opacity:1;
-
 transform:translateY(0);
-
 }
 
 @keyframes float{
 
-0%{
+0%{transform:translateY(0);}
 
-transform:translateY(0);
+50%{transform:translateY(-12px);}
 
-}
-
-50%{
-
-transform:translateY(-12px);
+100%{transform:translateY(0);}
 
 }
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-/* Mobile */
 
 @media(max-width:900px){
 
 .hero{
-
 grid-template-columns:1fr;
+text-align:center;
+}
 
+.hero-left{
+align-items:center;
 }
 
 .profile{
+width:280px;
+height:380px;
+}
 
-width:300px;
+header{
+width:95%;
+}
 
-height:400px;
-
+nav{
+gap:10px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 h1{
-
 font-size:4rem;
-
-}
-
-.story h2{
-
-font-size:3rem;
-
-}
-
-.contact h2{
-
-font-size:3rem;
-
 }
 
 }
@@ -400,16 +249,25 @@ font-size:3rem;
 
 <nav>
 
+<a href="#about">About</a>
+
 <a href="#experience">Experience</a>
 
 <a href="#skills">Skills</a>
 
+<a href="#education">Education</a>
+
 <a href="#contact">Contact</a>
+
+<a href="Shajid_Shaik_Resume_QA.pdf" download class="resume-btn">
+
+Resume ↓
+
+</a>
 
 </nav>
 
 </header>
-
 
 <section class="hero">
 
@@ -433,6 +291,10 @@ For Intelligent Software.
 
 <div class="description">
 
+QA Engineer
+
+<br>
+
 Manual Testing
 
 <br>
@@ -441,22 +303,21 @@ API Testing
 
 <br>
 
-Playwright
+Python & Playwright
 
 <br>
 
-Automotive AI
+CI/CD
 
 </div>
 
-<a href="#experience" class="btn">
+<a href="#about" class="btn">
 
 Explore ↓
 
 </a>
 
 </div>
-
 
 <div class="hero-right reveal">
 
@@ -470,79 +331,133 @@ Explore ↓
 
 </section>
 
+<section class="story reveal" id="about">
+
+<h2>
+
+About Me
+
+</h2>
+
+<p>
+
+QA Engineer with 1+ years of experience across STLC including manual, functional, regression and exploratory testing. Skilled in Jira, TestRail, Postman, Docker and CI/CD while building automation expertise using Python and Playwright.
+
+</p>
+
+</section>
 
 <section class="story reveal" id="experience">
 
 <h2>
 
-80+ Test Cases.
-
-<br>
-
-Every Day.
-
-</h2>
-
-<p>
-
-Executing functional, regression and exploratory testing.
-
-</p>
-
-</section>
-
-
-<section class="story reveal">
-
-<h2>
-
-Automotive AI.
-
-<br>
-
-Applied Intuition.
-
-</h2>
-
-<p>
-
-Building trust before software reaches intelligent vehicles.
-
-</p>
-
-</section>
-
-
-<section class="story reveal" id="skills">
-
-<h2>
-
-Tools I Use
+Experience
 
 </h2>
 
 <div class="skills">
 
+<div class="skill">80+ Test Cases Daily</div>
+
+<div class="skill">5-Day Regression Cycles</div>
+
+<div class="skill">REST API Testing</div>
+
 <div class="skill">Jira</div>
 
 <div class="skill">TestRail</div>
-
-<div class="skill">Postman</div>
-
-<div class="skill">Git</div>
-
-<div class="skill">Python</div>
-
-<div class="skill">Playwright</div>
 
 <div class="skill">Docker</div>
 
 <div class="skill">CI/CD</div>
 
+<div class="skill">Playwright</div>
+
 </div>
 
 </section>
 
+<section class="story reveal" id="skills">
+
+<h2>
+
+Technical Skills
+
+</h2>
+
+<div class="skills">
+
+<div class="skill">Manual Testing</div>
+
+<div class="skill">Regression Testing</div>
+
+<div class="skill">Exploratory Testing</div>
+
+<div class="skill">Smoke Testing</div>
+
+<div class="skill">Sanity Testing</div>
+
+<div class="skill">Python</div>
+
+<div class="skill">Git</div>
+
+<div class="skill">Postman</div>
+
+</div>
+
+</section>
+
+<section class="story reveal" id="education">
+
+<h2>
+
+Education
+
+</h2>
+
+<p>
+
+B.Tech EEE (2024)
+
+<br>
+
+7.0 CGPA
+
+<br><br>
+
+Diploma EEE (2021)
+
+<br>
+
+76%
+
+</p>
+
+</section>
+
+<section class="story reveal">
+
+<h2>
+
+Certifications
+
+</h2>
+
+<div class="skills">
+
+<div class="skill">Python Programming</div>
+
+<div class="skill">Full Stack Development</div>
+
+<div class="skill">EV Technology</div>
+
+<div class="skill">Salesforce Developer</div>
+
+<div class="skill">Cybersecurity</div>
+
+</div>
+
+</section>
 
 <section class="contact reveal" id="contact">
 
@@ -560,40 +475,23 @@ Email Me
 
 </a>
 
-<a class="btn"
-
-href="https://linkedin.com/in/shajid-shaik-012238371"
-
-target="_blank">
-
-LinkedIn
-
-</a>
-
 </section>
-
 
 <script>
 
-const observer=
-
-new IntersectionObserver((entries)=>{
+const observer=new IntersectionObserver((entries)=>{
 
 entries.forEach(entry=>{
 
 if(entry.isIntersecting){
 
-entry.target.classList.add('active');
+entry.target.classList.add('active')
 
 }
 
 })
 
-},
-
-{threshold:0.2}
-
-)
+},{threshold:0.2})
 
 document
 
@@ -606,3 +504,4 @@ document
 </body>
 
 </html>
+```
